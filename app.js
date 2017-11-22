@@ -12,7 +12,7 @@ var express = require('express'),
 var auth = require('http-auth');
 var basic = auth.basic({
 	realm: "auth-db",
-	file: __dirname + "/public/data/passwords"
+	file: __dirname + "/public/data/passwords.txt"
 });
 
 console.log(basic);
@@ -47,7 +47,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(methodOverride());
-app.use(express.static(path.join(__dirname, 'public')));
+
 app.use('/style', express.static(path.join(__dirname, '/views/style')));
 
 app.use(auth.connect(basic));
