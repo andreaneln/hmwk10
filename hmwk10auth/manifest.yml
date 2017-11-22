@@ -1,0 +1,10 @@
+applications:
+- path: .
+  memory: 256M
+  instances: 1
+  domain: mybluemix.net
+  name: hmwk10auth
+  host: hmwk10auth
+  disk_quota: 1024M
+  services:
+  - hmwk10auth-cloudantNoSQLDB
